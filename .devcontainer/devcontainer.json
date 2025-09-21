@@ -8,13 +8,22 @@
   "postCreateCommand": "",
   "customizations": {
     "codespaces": {
-      "openFiles": []
+      "openFiles": [ ]
     },
     "vscode": {
       "extensions": [
         "ms-toolsai.jupyter",
-        "ms-python.python"
+        "ms-python.python",
+        "ms-azuretools.vscode-docker"
       ]
+    },
+  "runArgs": [
+    "--gpus", "all"
+  ],
+    "features": {
+      "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+        "installCudnn": true
+      }
     }
   }
 }

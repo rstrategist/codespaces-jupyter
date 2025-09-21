@@ -1,3 +1,10 @@
 notebooks/data
 notebooks/cifar_net.pth
 .ipynb_checkpoints/
+
+
+# Logs and artifacts
+logs/*
+!logs/**/metrics.json
+artifacts/*
+notebooks/logs/*

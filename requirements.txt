@@ -1,6 +1,33 @@
-ipywidgets==8.1.2
-matplotlib==3.8.4
+# Core ML/Data
+numpy==1.26.4
 pandas==2.2.2
+scikit-learn==1.5.1
+scipy==1.14.1
+matplotlib==3.9.2
+seaborn==0.13.2
+
+# Deep Learning
 torch==2.8.0
 torchvision==0.23.0
-tqdm==4.66.4
+torchaudio==2.8.0
+
+# Advanced ML
+xgboost==2.1.1
+lightgbm==4.5.0
+catboost==1.2.5
+
+# NLP/Transformers
+transformers==4.44.2
+datasets==3.0.2
+
+# Jupyter
+#jupyterlab==4.2.5
+#ipykernel==6.29.5
+
+# Utility
+tqdm==4.66.5
+ipywidgets==8.1.2
+# matplotlib==3.8.4
+
+
+

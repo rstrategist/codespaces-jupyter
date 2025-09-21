@@ -1,0 +1,39 @@
+name: ML Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: "0 2 * * *"  # run nightly at 2 AM UTC
+
+jobs:
+  ml-train:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: make setup
+
+      - name: Run training notebook
+        run: make train
+
+      - name: Upload artifacts (report)
+        uses: actions/upload-artifact@v4
+        with:
+          name: house-prices-report
+          path: artifacts/house_prices_report.html
+
+      - name: Upload logs (metrics + models)
+        uses: actions/upload-artifact@v4
+        with:
+          name: house-prices-logs
+          path: logs/
